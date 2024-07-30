@@ -4,9 +4,11 @@ import "./index.css";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./modules/index.jsx";
 import { Provider } from "react-redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 const store = configureStore({
   reducer: rootReducer,
+  devTools: composeWithDevTools,
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
